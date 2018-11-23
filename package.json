@@ -1,6 +1,6 @@
 {
   "name": "fluent-formio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fluent Connector for Formio submissions",
   "main": "lib/fluent-formio.min.js",
   "directories": {
