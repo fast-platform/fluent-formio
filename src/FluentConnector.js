@@ -108,10 +108,10 @@ export default Interface.compose({
       if (typeof _id !== "string") {
         throw new Error(
           'Formio connector find() method only accepts strings "' +
-          typeof _id +
-          '" given "' +
-          _id +
-          '"'
+            typeof _id +
+            '" given "' +
+            _id +
+            '"'
         );
       }
       let [error, data] = await to(this.where("_id", "=", _id).first());

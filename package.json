@@ -2,7 +2,7 @@
   "name": "fluent-formio",
   "version": "0.1.0",
   "description": "Fluent Connector for Formio submissions",
-  "main": "lib/fast-fluent.min.js",
+  "main": "lib/fluent-formio.min.js",
   "directories": {
     "lib": "lib",
     "test": "test"
