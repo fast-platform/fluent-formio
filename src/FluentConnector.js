@@ -147,7 +147,10 @@ export default Interface.compose({
     },
     getHeaders() {
       let headers = {};
-      let token = localStorage.getItem("formioToken");
+      let token = {};
+      if (typeof localStorage !== 'undefined') {
+        token = localStorage.getItem("formioToken");
+      }
 
       if (this.remoteConnection.token || this.remoteConnection.token === "") {
         token = this.remoteConnection.token;
