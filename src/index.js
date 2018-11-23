@@ -1,9 +1,3 @@
-import Fluent from "./Fluent/Fluent";
-import Model from "./Fluent/Model";
-import Interface from "./Fluent/Interface";
+import FluentConnector from "./FluentConnector";
 
-export {
-  Model,
-  Fluent,
-  Interface
-};
+export default FluentConnector;

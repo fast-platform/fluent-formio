@@ -1,7 +1,7 @@
 {
-  "name": "fast-fluent",
-  "version": "0.1.16",
-  "description": "Readable query Interface for Local and Remote storage providers",
+  "name": "fluent-formio",
+  "version": "0.1.0",
+  "description": "Fluent Connector for Formio submissions",
   "main": "lib/fast-fluent.min.js",
   "directories": {
     "lib": "lib",
@@ -31,10 +31,10 @@
   },
   "homepage": "https://github.com/UN-FAO/fastjs.git#readme",
   "dependencies": {
-    "@stamp/compose": "^1.0.2",
-    "@stamp/it": "^1.1.0",
-    "@stamp/privatize": "^1.0.3",
-    "stampit": "^4.2.0"
+    "await-to-js": "^2.1.1",
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.3",
+    "fast-fluent": "^0.1.17"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.15.0",
