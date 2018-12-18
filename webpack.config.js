@@ -72,13 +72,7 @@ const config = {
       amd: '_',
       root: '_'
     },
-    axios: 'axios',
-    bluebird: 'bluebird',
-    formiojs: 'formiojs',
-    lokijs: 'lokijs',
-    md5: 'md5',
-    moment: 'moment',
-    uuid: 'uuid'
+    axios: 'axios'
   },
   node: {
     // prevent webpack from injecting mocks to Node native modules

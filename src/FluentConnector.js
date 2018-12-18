@@ -45,10 +45,11 @@ export default Interface.compose({
       if (Array.isArray(data)) {
         return this.ArrayInsert(data, options);
       }
+
       let [error, result] = await to(this.httpPOST(data));
 
       if (error) {
-        console.log(error);
+        // console.log(error);
         throw new Error("Cannot insert data");
       }
       return result.data;
@@ -147,7 +148,10 @@ export default Interface.compose({
     },
     getHeaders() {
       let headers = {};
-      let token = localStorage.getItem("formioToken");
+      let token = {};
+      if (typeof localStorage !== 'undefined') {
+        token = localStorage.getItem("formioToken");
+      }
 
       if (this.remoteConnection.token || this.remoteConnection.token === "") {
         token = this.remoteConnection.token;
