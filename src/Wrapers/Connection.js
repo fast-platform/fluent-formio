@@ -51,10 +51,10 @@ let Connection = (() => {
   function isOnline() {
     return new Promise((resolve, reject) => {
       axios.get('https://yesno.wtf/api')
-        .then(function (res) {
+        .then( res => {
           resolve(true);
         })
-        .catch(function (err) {
+        .catch( err => {
           resolve(false);
         })
     });

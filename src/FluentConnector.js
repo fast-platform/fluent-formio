@@ -33,7 +33,7 @@ export default Interface.compose({
         throw new Error("Error while getting submissions");
       }
 
-      result = this.jsApplySelect(result.data);
+      result = this.jsApplySelect(result && result.data);
       result = this.jsApplyOrderBy(result);
 
       return result;
@@ -164,7 +164,7 @@ export default Interface.compose({
     getSpacer(url) {
       return url.substr(url.length - 1) === "&" ? "" : "&";
     },
-    httpGET() {
+    async httpGET() {
       let url = this.getUrl();
       let headers = this.getHeaders();
       let filters = this.getFilters();
@@ -182,28 +182,32 @@ export default Interface.compose({
 
       url = select ? url + this.getSpacer(url) + select : url;
 
-      if (!Connection.isOnline()) {
+      const isOnline = await Connection.isOnline();
+
+      if (!isOnline) {
         throw new Error(`Cannot make get request to ${url}.You are not online`);
       }
 
       return axios.get(url, { headers });
     },
-    httpPOST(data) {
+    async httpPOST(data) {
       let url = this.getUrl();
       let headers = this.getHeaders();
+      const isOnline = await Connection.isOnline();
 
-      if (!Connection.isOnline()) {
+      if (!isOnline) {
         throw new Error(
           `Cannot make request post to ${url}.You are not online`
         );
       }
       return axios.post(url, data, { headers });
     },
-    httpPUT(data) {
+    async httpPUT(data) {
+      const isOnline = await Connection.isOnline();
       let url = `${this.getUrl()}/${data._id}`;
       let headers = this.getHeaders();
 
-      if (!Connection.isOnline()) {
+      if (!isOnline) {
         throw new Error(
           `Cannot make request post to ${url}.You are not online`
         );
